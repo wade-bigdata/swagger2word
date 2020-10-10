@@ -143,6 +143,9 @@ public class WordServiceImpl implements WordService {
                         continue;
                     }
                     Object schema = ((Map) obj).get("schema");
+                    if(schema == null){
+                        continue;
+                    }
                     if (((Map) schema).get("$ref") != null) {
                         //非数组类型返回值
                         String ref = (String) ((Map) schema).get("$ref");
